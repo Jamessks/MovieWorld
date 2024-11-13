@@ -4,6 +4,8 @@ A website in which users may post reviews about a movie they like.
 
 ## Basic Requirements
 
+Composer (installed and able to run)
+
 Docker
 
 ## Deployment Instructions
@@ -11,7 +13,7 @@ Docker
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-   Preferably, navigate to ```/var/www``` and clone the project there (no need to make changes to .env that way)
+   Preferably, on a linux system, navigate to ```/var/www``` and clone the project there (no need to make changes to .env that way)
    ```bash
    git@github.com:Jamessks/MovieWorld.git
    ```
@@ -20,16 +22,19 @@ Follow these steps to set up the project locally:
 
 2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
 
-3. **Open docker**: Open your docker desktop application
+3. **Composer**: run ```composer install```
 
 4. **.env configuration**: At project root check that everything is OK in .env file.
 
-5. **IMPORTANT:** make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```/var/www``` and you git cloned the repo, change the value of the `APP_PATH` to `/var/www/${APP_NAME}`
-6. **ALSO IMPORTANT:** In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName` (no need to change anything before or after the project name)
+5. **Open docker**: Open your docker desktop application
 
-7. **Initialize containers**: `docker-compose up --build -d` from your terminal at project root
+6. **IMPORTANT:** make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```/var/www``` and you git cloned the repo, change the value of the `APP_PATH` to `/var/www/${APP_NAME}`
 
-8. **Access application**: Access the project at http://localhost:8081
+7. **ALSO IMPORTANT:** In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName` (no need to change anything before or after the project name)
+
+8. **Initialize containers**: `docker-compose up --build -d` from your terminal at project root
+
+9. **Access application**: Access the project at http://localhost:8081
 
 PS: From within your docker application -> `'tests-1' image -> EXEC tab`
 
