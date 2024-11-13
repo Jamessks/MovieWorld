@@ -4,7 +4,7 @@ A website in which users may post reviews about a movie they like.
 
 ## Basic Requirements
 
-Composer (installed and able to run commands outside docker)
+Composer (optional)
 
 Docker
 
@@ -22,7 +22,7 @@ Follow these steps to set up the project locally:
 
 2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
 
-3. **Composer**: run ```composer install```. This will create the vendor folder in the project.
+3. **Composer**: run ```composer install```. This will create the vendor folder in the project. (Read step 9 if you don't have composer outside docker)
 
 4. **.env configuration**: At project root check that everything is OK in .env file.
 
@@ -33,8 +33,9 @@ Follow these steps to set up the project locally:
 7. **ALSO IMPORTANT:** In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName` (no need to change anything before or after the project name)
 
 8. **Initialize containers**: `docker-compose up --build -d` from your terminal at project root
+9. **Composer alternative**: If you don't have composer outside docker. **STEP 1**: From Docker desktop go to web-1 container -> EXEC tab -> ```composer install```. **STEP 2**: run ```docker-compose down``` outside docker. **STEP 3**: run ```docker-compose up --build -d``` outside docker.
 
-9. **Access application**: Access the project at http://localhost:8081
+10. **Access application**: Access the project at http://localhost:8081
 
 PS: From within your docker application -> `'tests-1' image -> EXEC tab`
 
