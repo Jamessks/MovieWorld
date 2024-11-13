@@ -28,7 +28,7 @@ Follow these steps to set up the project locally:
 
 5. **Open docker**: Open your docker desktop application
 
-6. **IMPORTANT:** make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```/var/www``` and you git cloned the repo, change the value of the `APP_PATH` to `/var/www/${APP_NAME}`
+6. **IMPORTANT:** Inside .env file make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```/var/www``` and you git cloned the repo, change the value of the `APP_PATH` to `/var/www/${APP_NAME}`
 
 7. **ALSO IMPORTANT:** In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName` (no need to change anything before or after the project name)
 
