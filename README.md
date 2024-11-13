@@ -4,7 +4,7 @@ A website in which users may post reviews about a movie they like.
 
 ## Basic Requirements
 
-Composer (installed and able to run)
+Composer (installed and able to run commands outside docker)
 
 Docker
 
