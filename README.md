@@ -56,6 +56,8 @@ may view other users' movie review posts http://localhost:8081/
 
 may visit non-important pages
 
+may view movie review posts and sort them by various filters
+
 **Non logged-in user**
 
 may register a new account http://localhost:8081/register
