@@ -1,0 +1,21 @@
+FROM php:8.2-fpm
+
+ARG APP_NAME
+WORKDIR /var/www/${APP_NAME}
+
+RUN apt-get update && apt-get install -y \
+    nano \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    supervisor \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install pdo pdo_mysql \
+    && pecl install redis && docker-php-ext-enable redis
+
+COPY . /var/www/${APP_NAME}
+
+COPY supervisord/supervisord.conf /etc/supervisor/supervisord.conf
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
