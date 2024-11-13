@@ -18,7 +18,7 @@ Follow these steps to set up the project locally:
    git@github.com:Jamessks/MovieWorld.git
    ```
 
-   or just download it as a zip file and place it in the directory of your choice.
+   or just download it as a zip file and extract it in the directory of your choice.
 
 2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
 
