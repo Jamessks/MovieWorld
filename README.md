@@ -11,14 +11,14 @@ Docker
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-
+   Preferably, navigate to /var/www and clone the project there (no need to make changes to .env that way)
    ```bash
    git@github.com:Jamessks/MovieWorld.git
    ```
 
    or just download it as a zip file and place it in the directory of your choice.
 
-2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal)
+2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
 
 3. **Open docker**: Open your docker desktop application
 
