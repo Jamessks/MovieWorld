@@ -22,7 +22,7 @@ Follow these steps to set up the project locally:
 
 2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
 
-3. **Composer**: run ```composer install```
+3. **Composer**: run ```composer install```. This will create the vendor folder in the project.
 
 4. **.env configuration**: At project root check that everything is OK in .env file.
 
