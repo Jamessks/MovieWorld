@@ -11,7 +11,7 @@ Docker
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-   Preferably, navigate to /var/www and clone the project there (no need to make changes to .env that way)
+   Preferably, navigate to ```/var/www``` and clone the project there (no need to make changes to .env that way)
    ```bash
    git@github.com:Jamessks/MovieWorld.git
    ```
