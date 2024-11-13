@@ -85,7 +85,7 @@ delete their own movie review posts from within their own profile page http://lo
 
 **_MVC custom framework_** that I work and practice on and add functionalities on the go for small scale projects such as this.
 
-**_Security_**: CSRF token for form validation.
+**_Security_**: CSRF token form validation.
 
 **_MySql_**: Users table to hold user data. Movies table to hold movie data and like_dislike table which uses a polymorphic many-to-many relationship between multiple types of content (imagine in the future if we wanted to add comments that users could like or dislike), we can use the same table to store that information. Appropriate indexes have been added to certain fields such as:
 
