@@ -81,28 +81,5 @@ may view their own or other people's profiles http://localhost:8081/user or http
 
 delete their own movie review posts from within their own profile page http://localhost:8081/user
 
-# **What the project includes**
-
-**_MVC custom framework_** that I work and practice on and add functionalities on the go for small scale projects such as this.
-
-**_Security_**: CSRF token form validation.
-
-**_MySql_**: Users table to hold user data. Movies table to hold movie data and like_dislike table which uses a polymorphic many-to-many relationship between multiple types of content (imagine in the future if we wanted to add comments that users could like or dislike), we can use the same table to store that information. Appropriate indexes have been added to certain fields such as:
-
-`` KEY `idx_user_id_on_like_dislike` (`user_id`) ``
-
-`` KEY `idx_target_id_on_like_dislike` (`target_id`) ``
-
-`` KEY `idx_user_target` (`user_id`,`target_type`,`target_id`) ``
-
-`` KEY `idx_user_reaction` (`user_id`,`reaction`) ``
-
-Which are mostly found in select queries and are very frequently requested.
-
-**_Redis_**: To track user login sessions and rate limiting (block users that make too many requests in a small amount of time)
-
-**_Redis Queue_**: When users delete their own movie review posts, reactions are also removed but in a queue from a worker that is set to run by supervisord (http://supervisord.org/). if a movie had 1000 reactions and the movie was deleted, we would have to delete the reactions as well. Ideally we dont want the user to wait for 1000 reactions to be removed through cascading so we delegate that heavy action to a Redis Queue that an automated worker is watching in the background, outside the main server.
-
-**_Vue.js_**: It handles reactive data such as movie Like count and Dislike count as well as reacting to movie review posts. When a user reacts to a movie, a PATCH request through AJAX is sent to `/api/reaction.php`. The api validates data (user is logged in, movie exists, movie does not belong to user who initiated the reaction etc.) rejects requests that are considered bad and if everything is OK the reaction is logged and passed to the database in the like_dislike table.
 
 Take a look at the rest of my pinned repositories https://github.com/Jamessks
