@@ -13,24 +13,24 @@ Docker
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-   Preferably, on a linux system, navigate to ```/var/www``` and clone the project there (no need to make changes to .env that way)
+   Navigate to ```/var/www``` and clone the project there (no need to make changes to .env that way)
    ```bash
    git@github.com:Jamessks/MovieWorld.git
    ```
 
-   or just download it as a zip file and extract it in the directory of your choice.
+   or download it as a zip file and extract it in the directory of your choice.
 
-2. **Project root**: CD to the root directory of the project with a terminal of your choice (I used WSL2 terminal).
+2. **Project root**: CD to the root directory of the project with a terminal of your choice.
 
 3. **Composer**: run ```composer install```. This will create the vendor folder in the project. (Read step 9 if you don't have composer outside docker)
 
-4. **.env configuration**: At project root check that everything is OK in .env file.
+4. **.env configuration**: Ensure .env is configured to your needs.
 
 5. **Open docker**: Open your docker desktop application
 
-6. **IMPORTANT:** Inside .env file make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```~/myprojects/``` and you git cloned the repo, change the value of the `APP_PATH` to `~/myprojects/${APP_NAME}`
+6. Inside .env file make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```~/myprojects/``` and you git cloned the repo, change the value of the `APP_PATH` to `~/myprojects/${APP_NAME}`
 
-7. **ALSO IMPORTANT:** In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName` (no need to change anything before or after the project name)
+7. In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName`
 
 8. **Initialize containers**: `docker-compose up --build -d` from your terminal at project root
 9. **Composer alternative**: If you don't have composer outside docker. **STEP 1**: From Docker desktop go to web-1 container -> EXEC tab -> ```composer install```. **STEP 2**: run ```docker-compose down``` outside docker. **STEP 3**: run ```docker-compose up --build -d``` outside docker.
