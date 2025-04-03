@@ -37,7 +37,7 @@ Follow these steps to set up the project locally:
 
 10. **Access application**: Access the project at http://localhost:8081
 
-PS: From within your docker application -> `'tests-1' image -> EXEC tab`
+From within your docker application -> `'tests-1' image -> EXEC tab`
 
 and run
 
