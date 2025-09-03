@@ -79,6 +79,3 @@ may react or undo their reaction (like/dislike) to other users' movie review pos
 may view their own or other people's profiles http://localhost:8081/user or http://localhost:8081/user?user_id=5 (if a user with id of 5 exists)
 
 delete their own movie review posts from within their own profile page http://localhost:8081/user
-
-
-Take a look at the rest of my pinned repositories https://github.com/Jamessks
