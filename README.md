@@ -50,32 +50,32 @@ to run available tests with Pest
 
 **All users**
 
-may visit the home page http://localhost:8081/
+- visit the home page http://localhost:8081/
 
-may view other users' movie review posts http://localhost:8081/
+- view other users' movie review posts http://localhost:8081/
 
-may visit non-important pages
+- visit non-important pages
 
-may view movie review posts and sort them by various filters
+- view movie review posts and sort them by various filters
 
 **Non logged-in user**
 
-may register a new account http://localhost:8081/register
+- register a new account http://localhost:8081/register
 
-may login to their account http://localhost:8081/login
+- login to their account http://localhost:8081/login
 
-may not view other users' profiles
+- not view other users' profiles
 
 **Logged-in user**
 
-may view other users' and their own movie review posts http://localhost:8081/
+- view other users' and their own movie review posts http://localhost:8081/
 
-may log out of their account (from navigation bar)
+- log out of their account (from navigation bar)
 
-create a new movie review post http://localhost:8081/movies/create
+- create a new movie review post http://localhost:8081/movies/create
 
-may react or undo their reaction (like/dislike) to other users' movie review posts but not their own
+- react or undo their reaction (like/dislike) to other users' movie review posts but not their own
 
-may view their own or other people's profiles http://localhost:8081/user or http://localhost:8081/user?user_id=5 (if a user with id of 5 exists)
+- view their own or other people's profiles http://localhost:8081/user or http://localhost:8081/user?user_id=5 (if a user with id of 5 exists)
 
-delete their own movie review posts from within their own profile page http://localhost:8081/user
+- delete their own movie review posts from within their own profile page http://localhost:8081/user
