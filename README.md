@@ -10,31 +10,34 @@ Docker
 
 ## Deployment Instructions
 
-Follow these steps to set up the project locally:
+### Quick Start (Recommended)
 
 1. **Clone the Repository**:
+
    ```bash
-   git@github.com:Jamessks/MovieWorld.git
+   git clone git@github.com:Jamessks/MovieWorld.git
+   cd MovieWorld
    ```
 
-   or download as a zip file and extract it in the directory of your choice.
+2. **Start the Application**:
 
-2. **Project root**: CD to the root directory of the project with a terminal of your choice.
+   ```bash
+   ./start.sh
+   ```
 
-3. **Composer**: run ```composer install```. This will create the vendor folder in the project. (Read step 9 if you don't have composer outside docker)
+3. **Access the Application**:
+   Open http://localhost:8081 in your browser
 
-4. **.env configuration**: Ensure .env is configured to your needs.
+### Manual Setup
 
-5. **Open docker**: Open your docker desktop application
+If you prefer manual setup:
 
-6. Inside .env file make sure `APP_PATH` points to the actual directory that you have imported the project into eg. if you are at ```~/myprojects/``` and you git cloned the repo, change the value of the `APP_PATH` to `~/myprojects/${APP_NAME}`
+1. **Prerequisites**: Ensure Docker is running
+2. **Start containers**: `docker-compose up --build -d`
+3. **Install dependencies** (if needed): `docker-compose exec web composer install`
+4. **Access application**: http://localhost:8081
 
-7. In the case that you change the .env `APP_NAME` from MovieWorld to something else, make sure you change the supervisord/supervisord.conf `command` and `directory` project name to reflect that change eg. `command=php /var/www/DifferentProjectName/Core/RedisManagement/workers/worker_reaction.php` and `directory=/var/www/DifferentProjectName`
-
-8. **Initialize containers**: `docker-compose up --build -d` from your terminal at project root
-9. **Composer alternative**: If you don't have composer outside docker. **STEP 1**: From Docker desktop go to web-1 container -> EXEC tab -> ```composer install```. **STEP 2**: run ```docker-compose down``` outside docker. **STEP 3**: run ```docker-compose up --build -d``` outside docker.
-
-10. **Access application**: Access the project at http://localhost:8081
+### Notes
 
 From within your docker application -> `'tests-1' image -> EXEC tab`
 

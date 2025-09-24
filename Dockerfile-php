@@ -16,6 +16,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY . /var/www/${APP_NAME}
 
-COPY supervisord/supervisord.conf /etc/supervisor/supervisord.conf
+COPY supervisord/supervisord.conf /etc/supervisor/supervisord.conf.template
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+CMD envsubst '${APP_NAME}' < /etc/supervisor/supervisord.conf.template > /etc/supervisor/supervisord.conf && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
